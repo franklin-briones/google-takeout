@@ -238,7 +238,7 @@ process_all_takeouts() {
     local takeout_folders=()
     while IFS= read -r -d '' folder; do
         takeout_folders+=("$folder")
-    done < <(find "$current_dir" -maxdepth 1 -type d -name "Takeout *" -print0)
+    done < <(find "$current_dir" -maxdepth 1 -type d -name "Takeout*" -print0)
     
     if [[ ${#takeout_folders[@]} -eq 0 ]]; then
         print_warning "No takeout folders found in: $current_dir"
@@ -311,4 +311,4 @@ main() {
 }
 
 # Run the main function with all arguments
-main "$@" 
+main "$@"
